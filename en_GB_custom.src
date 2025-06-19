@@ -1,0 +1,113 @@
+escape_char /
+comment_char %
+
+LC_IDENTIFICATION
+title      "GB English with ISO Date/Time/Address and US Number/Currency"
+source     "en_GB_custom"
+address    "N/A"
+contact    "Andreas Toth"
+email      "andreas.toth@xtra.co.nz"
+tel        ""
+fax        ""
+language   "English"
+territory  "United Kingdom"
+revision   "1.0"
+date       "2025-06-19"
+END LC_IDENTIFICATION
+
+LC_CTYPE
+copy "en_GB"
+END LC_CTYPE
+
+LC_COLLATE
+copy "en_GB"
+END LC_COLLATE
+
+LC_MONETARY
+int_curr_symbol           "USD "
+currency_symbol           "$"
+mon_decimal_point         "."
+mon_thousands_sep         ","
+mon_grouping              3;3
+positive_sign             ""
+negative_sign             "-"
+int_frac_digits           2
+frac_digits               2
+p_cs_precedes             1
+p_sep_by_space            0
+n_cs_precedes             1
+n_sep_by_space            0
+p_sign_posn               1
+n_sign_posn               1
+int_p_cs_precedes         1
+int_p_sep_by_space        0
+int_n_cs_precedes         1
+int_n_sep_by_space        0
+int_p_sign_posn           1
+int_n_sign_posn           1
+END LC_MONETARY
+
+LC_NUMERIC
+decimal_point             "."
+thousands_sep             ","
+grouping                  3;3
+END LC_NUMERIC
+
+LC_TIME
+abday   "Sun";"Mon";"Tue";"Wed";"Thu";"Fri";"Sat"
+day     "Sunday";"Monday";"Tuesday";"Wednesday";"Thursday";"Friday";"Saturday"
+abmon   "Jan";"Feb";"Mar";"Apr";"May";"Jun";"Jul";"Aug";"Sep";"Oct";"Nov";"Dec"
+mon     "January";"February";"March";"April";"May";"June";"July";"August";"September";"October";"November";"December"
+d_t_fmt "%Y-%m-%d %H:%M:%S"
+d_fmt   "%Y-%m-%d"
+t_fmt   "%H:%M:%S"
+am_pm   "";""
+t_fmt_ampm ""
+week    7;19971130;1
+first_weekday 2
+END LC_TIME
+
+LC_MESSAGES
+yesexpr "^[yY]"
+noexpr  "^[nN]"
+yesstr  "yes"
+nostr   "no"
+END LC_MESSAGES
+
+LC_PAPER
+height 297
+width 210
+END LC_PAPER
+
+LC_NAME
+name_fmt "%p%t%f%t%m%t%g"
+name_gen ""
+name_miss "Miss"
+name_mr   "Mr"
+name_mrs  "Mrs"
+name_ms   "Ms"
+END LC_NAME
+
+LC_ADDRESS
+postal_fmt    "%f%N%h %a%N%z %T%N%c"
+country_name  "United Kingdom"
+country_ab2   "GB"
+country_ab3   "GBR"
+country_num   826
+country_car   "GB"
+country_isbn  0
+lang_name     "English"
+lang_ab       "en"
+lang_term     "eng"
+lang_lib      "eng"
+END LC_ADDRESS
+
+LC_TELEPHONE
+tel_int_fmt    "+%c %a %l"
+int_select     "00"
+int_prefix     "44"
+END LC_TELEPHONE
+
+LC_MEASUREMENT
+measurement 1
+END LC_MEASUREMENT
