@@ -23,6 +23,14 @@ It is designed for users who prefer British English but want to align with **int
 
 ## Installation
 
+Before running the installation script, ensure it is executable:
+
+```bash
+chmod +x install_en_GB_custom_locale.sh
+```
+
+Then run:
+
 ```bash
 sudo ./install_en_GB_custom_locale.sh
 ```
