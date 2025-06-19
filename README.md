@@ -20,41 +20,79 @@ It is designed for users who prefer British English but want to align with **int
 
 - `en_GB_custom.src` – Locale definition file
 - `install_en_GB_custom_locale.sh` – Installation script
+- `test_en_GB_custom_locale.sh` – Test script for verifying locale behavior
 
 ## Installation
 
-Before running the installation script, ensure it is executable:
-
 ```bash
 chmod +x install_en_GB_custom_locale.sh
-```
-
-Then run:
-
-```bash
 sudo ./install_en_GB_custom_locale.sh
 ```
 
 This script will:
 
 1. Copy the locale source to the correct system directory.
-2. Register it in `/etc/locale.gen` (if not already present).
-3. Generate the locale using `locale-gen`.
-4. Set it system-wide via `localectl`.
+2. Remove any obsolete `@custom` variant if found.
+3. Register it in `/etc/locale.gen` (if not already present).
+4. Generate the locale using `locale-gen`.
+5. Set it system-wide via `localectl`.
 
-## Verification
+## Enabling the Locale
 
-After installation, verify the locale with:
+### Temporary (Current Terminal Only)
 
-```bash
-locale -a | grep en_GB_custom
-```
-
-And confirm system locale settings using:
+To enable the custom locale for just your current terminal session:
 
 ```bash
-locale
+export LANG=en_GB_custom.utf8
+export LC_ALL=en_GB_custom.utf8
 ```
+
+This is useful for testing or scripting purposes.
+
+### Permanent (System-Wide)
+
+To make the locale the default across all user sessions and terminals:
+
+```bash
+sudo localectl set-locale LANG=en_GB_custom.utf8
+```
+
+After applying this, either reboot or re-login for changes to take full effect.
+
+### Per-User Configuration
+
+Alternatively, for just one user, add this to `~/.bashrc` or `~/.profile`:
+
+```bash
+export LANG=en_GB_custom.utf8
+export LC_ALL=en_GB_custom.utf8
+```
+
+Then run:
+
+```bash
+source ~/.bashrc
+```
+
+## Testing the Locale
+
+### Prerequisite
+
+Before running the test script, you **must have the locale enabled in the current terminal session**, either temporarily or permanently.
+
+### Running the Test
+
+```bash
+chmod +x test_en_GB_custom_locale.sh
+./test_en_GB_custom_locale.sh
+```
+
+The script will:
+
+- Verify that the locale is available
+- Run various standard commands (`date`, `locale`, `printf`, etc.)
+- Show **actual vs expected output** side-by-side for easy visual comparison
 
 ## Compatibility
 
